@@ -26,7 +26,18 @@ def terminar_programa() -> None:
 root = tk.Tk()
 root.title("Despacho Automático")
 root.geometry("400x300")
-root.iconphoto(True, tk.PhotoImage(file='policia.png'))
+
+import os
+import tkinter as tk
+
+# Obtém o diretório atual do arquivo sendo executado
+current_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Constrói o caminho completo para a imagem
+image_path = os.path.join(current_dir, 'assets', 'policia.png')
+
+# Define o ícone da janela
+root.iconphoto(True, tk.PhotoImage(file=image_path))
 root.configure(bg="#344955")
 
 # Título

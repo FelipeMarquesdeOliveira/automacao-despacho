@@ -31,7 +31,7 @@ def localizar_botao(imagem_botao: str, confidence: float = 0.8) -> Optional[Tupl
 
 def mover_para_posicao_1_e_scroll() -> None:
     """Move para a posição 1 e realiza o scroll."""
-    posicao1 = localizar_botao('posicao1.png')
+    posicao1 = localizar_botao('/assets/botoes/posicao1.png')
     if posicao1 is not None:
         pyautogui.moveTo(posicao1)
         pyautogui.scroll(-1000)
@@ -45,10 +45,10 @@ def executar_perda_colisao() -> None:
     primeiroClick = (1880, 642)
     segundoClick = (1751, 767)
     imagens_botoes = [
-        'botao3_perda_colisao.png',  # Botão 1
-        'botao4_perda_colisao.png',  # Botão 2
-        'botao5_perda_colisao.png',  # Botão 3
-        'botao6_perda_colisao.png'   # Botão 4
+        'assets/botoes/botao3_perda_colisao.png',  
+        'assets/botoes/botao4_perda_colisao.png',  
+        'assets/botoes/botao5_perda_colisao.png',  
+        'assets/botoes/botao6_perda_colisao.png'  
     ]
 
     # Estado para controlar qual passo está sendo executado
@@ -75,13 +75,13 @@ def executar_perda_colisao() -> None:
                         pyautogui.moveTo(1034, 179)  # Movimento padrão após clicar no botão
 
                         # Verifica e executa as ações específicas dos botões
-                        if img == 'botao4_perda_colisao.png':  # Botão 2
+                        if img == 'assets/botoes/botao4_perda_colisao.png':  # Botão 2
                             pass  # Ação específica pode ser adicionada aqui, se necessário
                             passo_atual += 1
-                        elif img == 'botao5_perda_colisao.png':  # Botão 3
+                        elif img == 'assets/botoes/botao5_perda_colisao.png':  # Botão 3
                             pyautogui.write("Ao arquivo, aguardando novos fatos.")  # Mensagem específica do botão 3
                             passo_atual += 1
-                        elif img == 'botao6_perda_colisao.png':  # Botão 4
+                        elif img == 'assets/botoes/botao6_perda_colisao.png': 
                             passo_atual += 1
                         else:
                             passo_atual += 1
@@ -109,10 +109,10 @@ def executar_estelionato() -> None:
     primeiroClick = (1880, 642)
     segundoClick = (1751, 767)
     imagens_botoes = [
-        'botao3_estelionato.png',  # Botão 1
-        'botao4_estelionato.png',  # Botão 2
-        'botao5_estelionato.png',  # Botão 3
-        'botao6_estelionato.png'   # Botão 6
+        'assets/botoes/botao3_estelionato.png',  
+        'assets/botoes/botao4_estelionato.png',  
+        'assets/botoes/botao5_estelionato.png',  
+        'assets/botoes/botao6_estelionato.png'  
     ]
 
     # Estado para controlar qual passo está sendo executado
@@ -138,14 +138,14 @@ def executar_estelionato() -> None:
                         clicar_em_coordenadas([botao])
 
                         # Verifica e executa as ações específicas dos botões
-                        if img == 'botao4_estelionato.png':
+                        if img == 'assets/botoes/botao4_estelionato.png':
                             pyautogui.moveTo(1034, 179)  # Moveto após o botão 4
                             passo_atual += 1
-                        elif img == 'botao5_estelionato.png':
+                        elif img == 'assets/botoes/botao5_estelionato.png':
                             pyautogui.moveTo(1034, 179)  # Moveto após o botão 5
                             pyautogui.write("Aguardando representação/requerimento da vítima.")
                             passo_atual += 1
-                        elif img == 'botao6_estelionato.png':
+                        elif img == 'assets/botoes/botao6_estelionato.png':
                             passo_atual += 1
                         else:
                             passo_atual += 1
