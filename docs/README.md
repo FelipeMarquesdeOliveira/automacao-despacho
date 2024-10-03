@@ -6,9 +6,10 @@ Ao iniciar o programa, uma interface amigável será aberta, com duas opções p
 
 ---
 
-## Interface Gráfica
-
-![Interface Gráfica do Programa](https://drive.google.com/uc?export=view&id=1CRLo1otHsTv7FhlybFCWvsZY-J6VAj-P)
+<div align="center">
+  <h2>Interface Gráfica</h2>
+  <img src="https://drive.google.com/uc?export=view&id=1CRLo1otHsTv7FhlybFCWvsZY-J6VAj-P" alt="Interface Gráfica do Programa">
+</div>
 
 ---
 
