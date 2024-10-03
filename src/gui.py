@@ -1,3 +1,4 @@
+import os
 import tkinter as tk
 from tkinter import messagebox
 import threading
@@ -18,17 +19,14 @@ def iniciar_programa() -> None:
 
 def terminar_programa() -> None:
     global stop_program
-    stop_program = True
-    terminar_btn.pack_forget()
-    iniciar_btn.pack(pady=20)
+    stop_program = True  # Interrompe as funções em loop
+    root.quit()  # Fecha a interface gráfica do tkinter
+    os._exit(0)  # Força o encerramento completo do programa e todas as threads
 
 # Interface gráfica
 root = tk.Tk()
 root.title("Despacho Automático")
 root.geometry("400x300")
-
-import os
-import tkinter as tk
 
 # Obtém o diretório atual do arquivo sendo executado
 current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -57,6 +55,7 @@ tk.Radiobutton(frame_opcoes, text="Estelionato", variable=var_opcao, value=2, fo
 iniciar_btn = tk.Button(root, text="Iniciar", command=iniciar_programa, font=("Helvetica", 14), bg="#4CAF50", fg="white", width=15)
 iniciar_btn.pack(pady=20)
 
-terminar_btn = tk.Button(root, text="Terminar", command=terminar_programa, font=("Helvetica", 14), bg="#F44336", fg="white", width=15)
+terminar_btn = tk.Button(root, text="Fechar", command=terminar_programa, font=("Helvetica", 14), bg="#F44336", fg="white", width=15)
+terminar_btn.pack(pady=20)
 
 root.mainloop()
